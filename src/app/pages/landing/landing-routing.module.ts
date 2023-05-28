@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SigninComponent } from './signin/signin.component';
+import { LandingComponent } from './landing.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SigninComponent
+    component: LandingComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '',
+        pathMatch: 'full',
+      },
+    ]
   }
 ];
 
@@ -13,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class SimpleRoutingModule { }
+export class LandingRoutingModule { }

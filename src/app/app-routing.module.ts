@@ -3,12 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'signin',
-    loadChildren: () => import('./pages/simple/simple.module').then(m => m.SimpleModule),
+    path: 'auth',
+    loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule),
+  },
+  {
+    path: 'landing',
+    loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule)
   },
   {
     path: '',
-    redirectTo: 'signin',
+    redirectTo: 'landing',
     pathMatch: 'full',
   },
 ];

@@ -1,15 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "styles/variables.scss";
 
-#page-content-wrapper {
-  height: 100%;
-  overflow: hidden;
-}
-
-.page-content-wrapper {
-  background-color: $bgColor;
-}
-
-#page-content-wrapper {
-  min-width: 100%;
+ body{
+  margin: 0;
 }

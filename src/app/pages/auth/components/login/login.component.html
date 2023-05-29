@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="container">
+    <div class="logo"><span>Logo</span> </div>
+    <div class="login-text">
+        <p>Hello there,</p>
+        <span>
+            Please enter your email address and password to continue.
+            If you don't have any account, please click the
+            <a href="javascript:void(0)" [routerLink]="['/auth/signup']">Create Account</a>
+            button given below.
+        </span>
+    </div>
+    <form class="login-form">
+        <div>
+            <label for="email">Email Address</label>
+            <input id="email" type="email" placeholder="Enter email address" name="email" />
+        </div>
+
+        <div class="login-password">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter password" name="password" />
+        </div>
+
+        <div class="login-btn">
+            <button type="button" class="primary-btn">Login</button>
+        </div>
+    </form>
+
+    <div class="create">
+        <a href="javascript:void(0)" [routerLink]="['/auth/signup']">Don’t have any account, Create One.</a>
+    </div>
+</div>

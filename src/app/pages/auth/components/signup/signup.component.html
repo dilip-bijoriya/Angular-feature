@@ -1,1 +1,22 @@
-<p>signup works!</p>
+<div class="container">
+    <div class="logo"><span>Logo</span> </div>
+    <form class="login-form">
+        <div>
+            <label for="text">First Name</label>
+            <input id="text" type="text" placeholder="Enter first name" name="text" />
+        </div>
+
+        <div class="login-password">
+            <label for="name">Last Name</label>
+            <input id="name" type="text" placeholder="Enter name" name="name" />
+        </div>
+
+        <div class="login-btn">
+            <button type="button" class="primary-btn">Next</button>
+        </div>
+    </form>
+
+    <div class="create">
+        <a href="javascript:void(0)" [routerLink]="['/auth/login']">Already have an account, Login</a>
+    </div>
+</div>

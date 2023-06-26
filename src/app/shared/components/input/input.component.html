@@ -1,0 +1,26 @@
+<div>
+  <label>{{ label }}</label>
+  <input
+    type="{{ type }}"
+    [placeholder]="placeholder"
+    [formControl]="control"
+    [id]="id"
+    [name]="name"
+    [pattern]="pattern"
+    [disabled]="disabled"
+    [minlength]="minlength"
+    [maxlength]="maxlength"
+  />
+  <div *ngIf="isInvalidAndTouched()">
+    <div *ngIf="control.hasError('required')" class="error">
+      This field is required
+    </div>
+    <div *ngIf="control.hasError('pattern')" class="error">Invalid input</div>
+    <div *ngIf="control.hasError('minlength')" class="error">
+      Minimum length is {{ minlength }}
+    </div>
+    <div *ngIf="control.hasError('maxlength')">
+      Maximum length is {{ maxlength }}
+    </div>
+  </div>
+</div>

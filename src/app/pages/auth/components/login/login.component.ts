@@ -8,9 +8,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  isFormSubmitted: boolean = false;
+  submitted = false;
 
   constructor(private formBuilder: FormBuilder) {
+  }
+
+  get f() {
+    return this.form.controls;
   }
 
   ngOnInit(): void {
@@ -19,11 +23,11 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(65)]]
     });
   }
+
   onSubmit(): void {
-    this.isFormSubmitted = true;
-    if (this.form.valid) {
-      console.log("sfgfd");
-      return
+    this.submitted = true;
+    if (this.form.invalid) {
+      return;
     }
   }
 

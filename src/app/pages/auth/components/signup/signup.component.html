@@ -25,7 +25,7 @@
           id="name"
           type="text"
           formControlName="lname"
-          placeholder="Enter name"
+          placeholder="Enter last name"
           name="name"
           [ngClass]="{ 'is-invalid': submittedOne && f['lname'].errors }"
         />
@@ -53,8 +53,9 @@
         id="text"
         type="text"
         formControlName="phone"
-        placeholder="Enter first name"
+        placeholder="Enter phone number"
         name="text"
+        maxlength="12"
         [ngClass]="{ 'is-invalid': submittedTwo && f1['phone'].errors }"
       />
       <div *ngIf="submittedTwo && f1['phone'].errors" class="invalid-feedback">
@@ -106,32 +107,50 @@
     </div>
 
     <div class="login-btn">
-      <button type="button" (click)="previusClick()" class="primary-btn">
+      <button type="button" (click)="secondNextClick()" class="primary-btn">
         Next
       </button>
     </div>
   </form>
   <div *ngIf="termsCondition">
-    <p style="font-size: 14px; font-weight: 400">
+    <p class="disc">
       Welcome to Blue Basket! These Terms and Conditions ("Terms") govern your
       use of our website, mobile application, and all related services
       (collectively referred to as the "Platform"). By accessing or using the
       Platform, you agree to be bound by these Terms. If you do not agree with
-      any part of these Terms, you may not access or use the Platform. Account
-      Registration and Eligibility: 1.1 You must be at least 18 years old or the
-      legal age of majority in your jurisdiction to create an account and use
-      the Platform. 1.2 You agree to provide accurate and complete information
-      during the registration process and keep your account credentials
-      confidential. You are solely responsible for all activities that occur
-      under your account. Product Listings and Orders: 2.1 Blue Basket is an
-      online marketplace that allows sellers to list products for sale. We
-      strive to provide accurate and up-to-date information about the products,
-      but we do not guarantee the accuracy, completeness, or reliability of any
-      product listings. 2.2 By placing an order through the Platform, you are
-      making an offer to purchase the products from the respective seller. All
-      orders are subject to acceptance by the seller. Blue Basket is not
-      responsible for any issues related to the products,
+      any part of these Terms, you may not access or use the Platform.
     </p>
+
+    <p class="disc">
+      1. Account Registration and Eligibility: 1.1 You must be at least 18 years
+      old or the legal age of majority in your jurisdiction to create an account
+      and use the Platform. 1.2 You agree to provide accurate and complete
+      information during the registration process and keep your account
+      credentials confidential. You are solely responsible for all activities
+      that occur under your account.
+    </p>
+
+    <p class="disc">
+      2. Product Listings and Orders: 2.1 Blue Basket is an online marketplace
+      that allows sellers to list products for sale. We strive to provide
+      accurate and up-to-date information about the products, but we do not
+      guarantee the accuracy, completeness, or reliability of any product
+      listings. 2.2 By placing an order through the Platform, you are making an
+      offer to purchase the products from the respective seller. All orders are
+      subject to acceptance by the seller. Blue Basket is not responsible for
+      any issues related to the products,
+    </p>
+
+    <div class="continue-btn">
+      <button
+        type="button"
+        (click)="signUp()"
+        class="primary-btn"
+        style="width: 100%"
+      >
+        Agree, Continue
+      </button>
+    </div>
   </div>
 
   <div class="create">

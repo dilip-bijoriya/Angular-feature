@@ -1,0 +1,56 @@
+::ng-deep {
+    .toast-container {
+        width: var(--toastr_width_base);
+        position: absolute;
+        top: var(--toastr_position_top_base);
+        z-index: 5050;
+    }
+
+    .custom-toast {
+        height: var(--toastr_height_base);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .toast--success {
+        background-color: var(--toastr_bg_color_success);
+        color: var(--toastr_font_color_success);
+    }
+
+    .toast--error {
+        background-color: var(--toastr_bg_color_error);
+        color: var(--toastr_font_color_error);
+    }
+
+    .toast--warning {
+        background-color: var(--toastr_bg_color_warning);
+        color: var(--toastr_font_color_warning);
+    }
+
+    .custom-toast-message {
+        font-size: var(--toastr_font_size_base);
+        font-weight: var(--toastr_font_weight_base);
+        line-height: var(--toastr_line_height_base);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .custom-toast-message span {
+        padding: var(--toastr_message_padding_y_base) var(--toastr_message_padding_x_base);
+    }
+}
+
+:host {
+    padding: 0 1rem;
+}
+
+.btn--close-filters {
+    pointer-events: all;
+}
+
+.custom-message {
+    text-align: center;
+    pointer-events: all;
+}

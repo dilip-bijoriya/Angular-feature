@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subject, takeUntil } from 'rxjs';
+import { ApiService } from '../../services/api.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +17,14 @@ export class SignupComponent implements OnInit {
   submittedTwo = false;
   showSignUp = false;
   termsCondition = false;
-  constructor(private formBuilder: FormBuilder) { }
+
+  private readonly destroy$: Subject<void> = new Subject<void>();
+  constructor(
+    private formBuilder: FormBuilder,
+    private apiService: ApiService,
+    private router: Router,
+    private toastr: ToastrService
+  ) { }
 
   get f() {
     return this.stepOneForm.controls;
@@ -44,11 +55,33 @@ export class SignupComponent implements OnInit {
     this.showSignUp = true;
   }
 
-  previusClick() {
+  secondNextClick() {
     this.submittedTwo = true;
     if (this.stepTwoForm.invalid) {
       return
     }
     this.termsCondition = true;
+  }
+
+  signUp(): void {
+    let map: any = { name: this.stepOneForm.value, ...this.stepTwoForm.value }
+    this.apiService
+      .signUp(map)
+      .pipe()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (res: any) => {
+          this.toastr.success(res.message);
+          this.router.navigate(['/auth/login']);
+        },
+        error: (error) => {
+          this.toastr.success(error.message);
+        },
+      });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

@@ -26,6 +26,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     SidebarComponent,
     InputComponent
-  ]
+  ],
 })
 export class SharedModule { }

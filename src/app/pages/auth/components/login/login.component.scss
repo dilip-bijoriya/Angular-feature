@@ -19,10 +19,13 @@ a {
     color: $primaryColor;
 }
 
+.forgotPassword {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
 .login-form {
-    // display: grid;
-    // grid-template-columns: 1fr;
-    // row-gap: 16px;
     margin-top: 8px;
 }
 
@@ -69,7 +72,8 @@ a {
 
 .login-btn {
     margin-top: 8px;
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
 }
 
 .create {

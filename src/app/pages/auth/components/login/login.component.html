@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="logo"><span>Logo</span></div>
+  <div class="logo"><img src="assets/img/logo.svg" alt="" /></div>
   <div class="login-text">
     <p>Hello there,</p>
     <span>
@@ -52,6 +52,12 @@
     </div>
 
     <div class="login-btn">
+      <a
+        href="javascript:void(0)"
+        [routerLink]="['/auth/forgot-password']"
+        class="forgotPassword"
+        >Forget Password</a
+      >
       <button type="button" (click)="onSubmit()" class="primary-btn">
         Login
       </button>

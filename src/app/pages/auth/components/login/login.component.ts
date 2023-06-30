@@ -41,10 +41,10 @@ export class LoginComponent implements OnInit {
     this.ApiService.signIn(map).pipe().subscribe({
       next: (res: any) => {
         this.toastr.success(res.message);
-        // this.router.navigate(['/auth/login']);
+        this.router.navigate(['/layout']);
       },
       error: (error) => {
-        this.toastr.success(error.message);
+        this.toastr.error(error.message);
       }
     })
   }

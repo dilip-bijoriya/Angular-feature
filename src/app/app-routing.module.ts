@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule)
   },
   {
+    path: 'layout',
+    loadChildren: () => import('./pages/common-module/common-module.module').then(m => m.CommonModuleModule)
+  },
+  {
     path: '',
     redirectTo: 'landing',
     pathMatch: 'full',

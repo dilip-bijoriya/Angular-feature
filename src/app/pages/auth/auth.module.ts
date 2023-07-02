@@ -9,6 +9,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { SignupComponent } from './components/signup/signup.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EmailVerifyComponent } from './components/email-verify/email-verify.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AuthComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    SignupComponent
+    SignupComponent,
+    EmailVerifyComponent
   ],
   imports: [
     CommonModule,

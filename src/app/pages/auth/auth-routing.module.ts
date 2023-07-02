@@ -5,6 +5,7 @@ import { AuthComponent } from './auth.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { EmailVerifyComponent } from './components/email-verify/email-verify.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'reset-password',
         component: ResetPasswordComponent
+      },
+      {
+        path: 'email-verify/:key',
+        component: EmailVerifyComponent
       },
       { path: '', redirectTo: 'landing', pathMatch: 'full' },
       { path: '**', redirectTo: 'landing', pathMatch: 'full' },

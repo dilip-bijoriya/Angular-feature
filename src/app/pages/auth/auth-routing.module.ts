@@ -34,7 +34,7 @@ const routes: Routes = [
         component: ResetPasswordComponent
       },
       {
-        path: 'email-verify/:key',
+        path: 'email-verify/:id',
         component: EmailVerifyComponent
       },
       { path: '', redirectTo: 'landing', pathMatch: 'full' },

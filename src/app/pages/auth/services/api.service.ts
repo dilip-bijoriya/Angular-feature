@@ -21,4 +21,8 @@ export class ApiService {
   forgotPassword(payload: string): Observable<void> {
     return this.http.post<void>(`${this.baseUrl}/forgotPassword`, payload);
   }
+
+  emailStatus(userId: string): Observable<void> {
+    return this.http.get<void>(`${this.baseUrl}/verificatinStatus/${userId}`);
+  }
 }

@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   submitted = false;
+  loading = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,20 +34,23 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
+    if (this.loading) return;
     this.submitted = true;
     if (this.form.invalid) {
       return;
     }
     let map: any = { ...this.form.value };
+    this.loading = true
     this.ApiService.signIn(map).pipe().subscribe({
       next: (res: any) => {
         this.toastr.success(res.message);
         this.router.navigate(['/layout']);
+        this.loading = false
       },
       error: (error) => {
         console.log(error);
-
         this.toastr.error(error.error.message || error.message);
+        this.loading = false
       }
     })
   }

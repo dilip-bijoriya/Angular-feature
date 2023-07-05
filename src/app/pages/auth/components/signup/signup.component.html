@@ -1,161 +1,189 @@
-<div class="container">
-  <div class="logo"><img src="assets/img/logo.svg" alt="" /></div>
-  <form class="login-form" [formGroup]="stepOneForm">
-    <div *ngIf="!showSignUp">
+<div class="main">
+  <div class="container">
+    <div class="logo"><img src="assets/img/logo.svg" alt="" /></div>
+    <form class="login-form" [formGroup]="stepOneForm">
+      <div *ngIf="!showSignUp">
+        <div>
+          <label for="text">First Name</label>
+          <input
+            id="text"
+            type="text"
+            formControlName="fname"
+            placeholder="Enter first name"
+            name="text"
+            [ngClass]="{ 'is-invalid': submittedOne && f['fname'].errors }"
+          />
+          <div
+            *ngIf="submittedOne && f['fname'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['fname'].errors['required']">
+              First name is required
+            </div>
+          </div>
+        </div>
+
+        <div class="login-password">
+          <label for="name">Last Name</label>
+          <input
+            id="name"
+            type="text"
+            formControlName="lname"
+            placeholder="Enter last name"
+            name="name"
+            [ngClass]="{ 'is-invalid': submittedOne && f['lname'].errors }"
+          />
+          <div
+            *ngIf="submittedOne && f['lname'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['lname'].errors['required']">
+              Last name is required
+            </div>
+          </div>
+        </div>
+
+        <div class="login-btn">
+          <button type="button" (click)="nextClick()" class="primary-btn">
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <form
+      class="login-form"
+      *ngIf="showSignUp && !termsCondition"
+      [formGroup]="stepTwoForm"
+    >
       <div>
-        <label for="text">First Name</label>
+        <label for="text">Phone Number</label>
         <input
           id="text"
           type="text"
-          formControlName="fname"
-          placeholder="Enter first name"
+          formControlName="phone"
+          placeholder="Enter phone number"
           name="text"
-          [ngClass]="{ 'is-invalid': submittedOne && f['fname'].errors }"
+          maxlength="12"
+          [ngClass]="{ 'is-invalid': submittedTwo && f1['phone'].errors }"
         />
-        <div *ngIf="submittedOne && f['fname'].errors" class="invalid-feedback">
-          <div *ngIf="f['fname'].errors['required']">
+        <div
+          *ngIf="submittedTwo && f1['phone'].errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f1['phone'].errors['required']">
             First name is required
           </div>
         </div>
       </div>
 
       <div class="login-password">
-        <label for="name">Last Name</label>
+        <label for="name">Email</label>
         <input
-          id="name"
-          type="text"
-          formControlName="lname"
-          placeholder="Enter last name"
-          name="name"
-          [ngClass]="{ 'is-invalid': submittedOne && f['lname'].errors }"
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Enter email"
+          name="email"
+          [ngClass]="{ 'is-invalid': submittedTwo && f1['email'].errors }"
         />
-        <div *ngIf="submittedOne && f['lname'].errors" class="invalid-feedback">
-          <div *ngIf="f['lname'].errors['required']">Last name is required</div>
+        <div
+          *ngIf="submittedTwo && f1['email'].errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f1['email'].errors['required']">Email is required</div>
+          <div *ngIf="f1['email'].errors['email']">Email is invalid</div>
+        </div>
+      </div>
+
+      <div class="login-password">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter password"
+          name="password"
+          formControlName="password"
+          [ngClass]="{ 'is-invalid': submittedTwo && f1['password'].errors }"
+          required
+        />
+        <div
+          *ngIf="submittedTwo && f1['password'].errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f1['password'].errors['required']">
+            Password is required
+          </div>
+          <div *ngIf="f1['password'].errors['minlength']">
+            Password must be at least 6 characters
+          </div>
+          <div *ngIf="f1['password'].errors['maxlength']">
+            Username must not exceed 40 characters
+          </div>
         </div>
       </div>
 
       <div class="login-btn">
-        <button type="button" (click)="nextClick()" class="primary-btn">
+        <button type="button" (click)="secondNextClick()" class="primary-btn">
           Next
         </button>
       </div>
-    </div>
-  </form>
+    </form>
+    <div *ngIf="termsCondition">
+      <p class="disc">
+        Welcome to Blue Basket! These Terms and Conditions ("Terms") govern your
+        use of our website, mobile application, and all related services
+        (collectively referred to as the "Platform"). By accessing or using the
+        Platform, you agree to be bound by these Terms. If you do not agree with
+        any part of these Terms, you may not access or use the Platform.
+      </p>
 
-  <form
-    class="login-form"
-    *ngIf="showSignUp && !termsCondition"
-    [formGroup]="stepTwoForm"
-  >
-    <div>
-      <label for="text">Phone Number</label>
-      <input
-        id="text"
-        type="text"
-        formControlName="phone"
-        placeholder="Enter phone number"
-        name="text"
-        maxlength="12"
-        [ngClass]="{ 'is-invalid': submittedTwo && f1['phone'].errors }"
-      />
-      <div *ngIf="submittedTwo && f1['phone'].errors" class="invalid-feedback">
-        <div *ngIf="f1['phone'].errors['required']">First name is required</div>
+      <p class="disc">
+        1. Account Registration and Eligibility: 1.1 You must be at least 18
+        years old or the legal age of majority in your jurisdiction to create an
+        account and use the Platform. 1.2 You agree to provide accurate and
+        complete information during the registration process and keep your
+        account credentials confidential. You are solely responsible for all
+        activities that occur under your account.
+      </p>
+
+      <p class="disc">
+        2. Product Listings and Orders: 2.1 Blue Basket is an online marketplace
+        that allows sellers to list products for sale. We strive to provide
+        accurate and up-to-date information about the products, but we do not
+        guarantee the accuracy, completeness, or reliability of any product
+        listings. 2.2 By placing an order through the Platform, you are making
+        an offer to purchase the products from the respective seller. All orders
+        are subject to acceptance by the seller. Blue Basket is not responsible
+        for any issues related to the products,
+      </p>
+
+      <div class="continue-btn">
+        <button
+          type="button"
+          (click)="signUp()"
+          class="primary-btn"
+          style="width: 100%"
+        >
+          Agree, Continue
+        </button>
       </div>
     </div>
 
-    <div class="login-password">
-      <label for="name">Email</label>
-      <input
-        id="email"
-        type="email"
-        formControlName="email"
-        placeholder="Enter email"
-        name="email"
-        [ngClass]="{ 'is-invalid': submittedTwo && f1['email'].errors }"
-      />
-      <div *ngIf="submittedTwo && f1['email'].errors" class="invalid-feedback">
-        <div *ngIf="f1['email'].errors['required']">Email is required</div>
-        <div *ngIf="f1['email'].errors['email']">Email is invalid</div>
-      </div>
-    </div>
-
-    <div class="login-password">
-      <label for="password">Password</label>
-      <input
-        id="password"
-        type="password"
-        placeholder="Enter password"
-        name="password"
-        formControlName="password"
-        [ngClass]="{ 'is-invalid': submittedTwo && f1['password'].errors }"
-        required
-      />
-      <div
-        *ngIf="submittedTwo && f1['password'].errors"
-        class="invalid-feedback"
+    <div class="create">
+      <a href="javascript:void(0)" [routerLink]="['/auth/login']"
+        >Already have an account, Login</a
       >
-        <div *ngIf="f1['password'].errors['required']">
-          Password is required
-        </div>
-        <div *ngIf="f1['password'].errors['minlength']">
-          Password must be at least 6 characters
-        </div>
-        <div *ngIf="f1['password'].errors['maxlength']">
-          Username must not exceed 40 characters
-        </div>
-      </div>
     </div>
-
-    <div class="login-btn">
-      <button type="button" (click)="secondNextClick()" class="primary-btn">
-        Next
-      </button>
+    <div *ngIf="loading" class="loader">
+      <lottie-player
+        src="/assets/animations/loading.json"
+        background="transparent"
+        speed="1"
+        style="width: 160px; height: 160px"
+        loop
+        autoplay
+      ></lottie-player>
     </div>
-  </form>
-  <div *ngIf="termsCondition">
-    <p class="disc">
-      Welcome to Blue Basket! These Terms and Conditions ("Terms") govern your
-      use of our website, mobile application, and all related services
-      (collectively referred to as the "Platform"). By accessing or using the
-      Platform, you agree to be bound by these Terms. If you do not agree with
-      any part of these Terms, you may not access or use the Platform.
-    </p>
-
-    <p class="disc">
-      1. Account Registration and Eligibility: 1.1 You must be at least 18 years
-      old or the legal age of majority in your jurisdiction to create an account
-      and use the Platform. 1.2 You agree to provide accurate and complete
-      information during the registration process and keep your account
-      credentials confidential. You are solely responsible for all activities
-      that occur under your account.
-    </p>
-
-    <p class="disc">
-      2. Product Listings and Orders: 2.1 Blue Basket is an online marketplace
-      that allows sellers to list products for sale. We strive to provide
-      accurate and up-to-date information about the products, but we do not
-      guarantee the accuracy, completeness, or reliability of any product
-      listings. 2.2 By placing an order through the Platform, you are making an
-      offer to purchase the products from the respective seller. All orders are
-      subject to acceptance by the seller. Blue Basket is not responsible for
-      any issues related to the products,
-    </p>
-
-    <div class="continue-btn">
-      <button
-        type="button"
-        (click)="signUp()"
-        class="primary-btn"
-        style="width: 100%"
-      >
-        Agree, Continue
-      </button>
-    </div>
-  </div>
-
-  <div class="create">
-    <a href="javascript:void(0)" [routerLink]="['/auth/login']"
-      >Already have an account, Login</a
-    >
   </div>
 </div>

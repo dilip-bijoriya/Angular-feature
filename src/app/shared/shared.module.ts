@@ -7,8 +7,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SharedComponent } from './shared.component';
 import { InputComponent } from './components/input/input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
 @NgModule({
   declarations: [
     SharedComponent,
@@ -20,7 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     SharedRoutingModule,
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule
   ],
   exports: [
     HeaderComponent,

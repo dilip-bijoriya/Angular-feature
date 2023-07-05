@@ -1,12 +1,41 @@
 <header class="header">
   <div class="logo">
-    <h1><img src="assets/img/logo.svg" alt=""></h1>
+    <h1><img src="assets/img/logo.svg" alt="" /></h1>
+    <ul>
+      <li><a href="javascript:void(0)">Men</a></li>
+      <li><a href="javascript:void(0)">Women</a></li>
+      <li><a href="javascript:void(0)">Kids</a></li>
+    </ul>
   </div>
   <nav class="navigation">
     <ul class="nav">
-      <li><a href="javascript:void(0)"><i class="icon-research-outline-1"></i></a></li>
-      <li><a href="javascript:void(0)"><i class="icon-shopping-bag-outline-1"></i></a></li>
-      <li><a href="javascript:void(0)" [routerLink]="['/auth/login']"><i class="icon-account-outline-1"></i></a></li>
+      <li>
+        <div class="search-container">
+          <input
+            class="search expandright"
+            id="searchright"
+            type="search"
+            name="q"
+            placeholder="Search"
+          />
+          <label class="button searchbutton" for="searchright"
+            ><i class="icon-magnifier-outline-1 mglass"></i
+          ></label>
+        </div>
+        <!-- <a href="javascript:void(0)"
+          ><i class="icon-magnifier-outline-1"></i
+        ></a> -->
+      </li>
+      <li>
+        <a href="javascript:void(0)"
+          ><i class="icon-shopping-bag-outline-1"></i
+        ></a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" [routerLink]="['/auth/login']"
+          ><i class="icon-account-outline-1"></i
+        ></a>
+      </li>
     </ul>
   </nav>
 </header>

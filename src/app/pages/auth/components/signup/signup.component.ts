@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit {
   submittedTwo = false;
   showSignUp = false;
   termsCondition = false;
+  loading = false;
 
   private readonly destroy$: Subject<void> = new Subject<void>();
   constructor(
@@ -64,7 +65,9 @@ export class SignupComponent implements OnInit {
   }
 
   signUp(): void {
-    let map: any = { name: this.stepOneForm.value, ...this.stepTwoForm.value }
+    if (this.loading) return;
+    let map: any = { name: this.stepOneForm.value, ...this.stepTwoForm.value };
+    this.loading = true;
     this.apiService
       .signUp(map)
       .pipe()
@@ -73,9 +76,11 @@ export class SignupComponent implements OnInit {
         next: (res: any) => {
           this.toastr.success(res.message);
           this.router.navigate(['/auth/login']);
+          this.loading = false;
         },
         error: (error) => {
           this.toastr.success(error.message);
+          this.loading = false;
         },
       });
   }

@@ -4,6 +4,7 @@ import { ApiService } from '../../services/api.service';
 import { Subject, takeUntil } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private ApiService: ApiService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private cookieService: CookieService
   ) { }
 
   get f() {
@@ -40,17 +42,17 @@ export class LoginComponent implements OnInit {
       return;
     }
     let map: any = { ...this.form.value };
-    this.loading = true
+    this.loading = true;
     this.ApiService.signIn(map).pipe().subscribe({
       next: (res: any) => {
         this.toastr.success(res.message);
         this.router.navigate(['/layout']);
-        this.loading = false
+        this.cookieService.set('web_basket', JSON.stringify(res.response));
+        this.loading = false;
       },
       error: (error) => {
-        console.log(error);
         this.toastr.error(error.error.message || error.message);
-        this.loading = false
+        this.loading = false;
       }
     })
   }

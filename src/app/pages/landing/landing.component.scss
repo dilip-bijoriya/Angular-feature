@@ -1,0 +1,37 @@
+.box {
+    overflow-y: auto;
+}
+
+.m-header {
+    margin-top: 4px;
+    height: 50px;
+    width: 100%;
+    background-color: #f0f0f0;
+    h5 {
+        font-size: 18px;
+        padding: 10px;
+        color: #000000;
+    }
+}
+
+.container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+    padding: 10px;
+
+    .img-wrapper {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

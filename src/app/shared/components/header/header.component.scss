@@ -44,9 +44,6 @@ a {
 .search-container {
   position: relative;
   display: inline-block;
-  // margin: 4px 2px;
-  // height: 50px;
-  // width: 50px;
   vertical-align: bottom;
 }
 
@@ -60,19 +57,19 @@ a {
   -moz-transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
   -o-transition-duration: 0.4s;
-  background-color: white;
   color: black;
 }
 
 .search {
   position: absolute;
   left: 49px;
-  background-color: white;
+  border-radius: 8px;
+  margin-top: -6px;
+  box-shadow: 0 0 0 0.1em #8c8e8c inset;
   outline: none;
   border: none;
-  // padding: 0;
   width: 0;
-  height: 100%;
+  height: 30px;
   z-index: 10;
   transition-duration: 0.4s;
   -moz-transition-duration: 0.4s;

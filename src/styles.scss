@@ -24,3 +24,213 @@ body {
   padding: 10px 20px;
   cursor: pointer;
 }
+
+.btn-outline--primary {
+  font-size: 14px;
+  border-radius: 4px;
+  border-width: 0;
+  margin-top: 15px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.btn--primary {
+  font-size: 14px;
+  border-radius: 4px;
+  border-width: 0;
+  margin-top: 15px;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #36b37e;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+// modal css
+.modal-footer {
+  padding: 0 3.6rem 2.1rem;
+  border-top: none;
+}
+
+.modal-footer .btn {
+  margin: 0;
+}
+
+.modal-footer .btn + .btn {
+  margin-left: 0.8rem;
+}
+
+.modal__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal__title {
+  width: 100%;
+  margin: 0;
+  color: #0a0a0a;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+/*   Body of modal   */
+.modal-body {
+  padding: 0;
+}
+
+.modal-body .nav {
+  justify-content: flex-end;
+  border: none;
+  margin-bottom: 2.4rem;
+  background: transparent;
+}
+
+.modal-body .nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 13.6rem;
+  border: none;
+  border-radius: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.modal-body .nav-link.active {
+  color: #0a0a0a;
+  box-shadow: 0 0.3rem 0.6rem -0.15rem #72b9ff;
+}
+
+.modal-body .tabs--simple .nav {
+  transform: translate(0);
+}
+
+.modal-body .tabs--simple .nav-link {
+  width: auto;
+  height: auto;
+}
+
+.modal-body .tabs--simple .tab-content {
+  margin-top: 0;
+}
+
+/*   Footer of modal   */
+.modal-footer {
+  padding: 0 3.6rem 2.1rem;
+  border-top: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-footer .btn {
+  margin: 0;
+}
+
+.modal-footer .btn + .btn {
+  margin-left: 0.8rem;
+}
+
+.modal-backdrop,
+.modal {
+  z-index: 5000;
+}
+
+// .modal-dialog {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 32.5rem;
+//   max-width: 100%;
+//   height: 90%;
+// }
+
+.modal-dialog--xs {
+  width: 34.3rem;
+}
+
+.modal-dialog--sm {
+  width: 48.6rem;
+}
+
+.modal-xs {
+  height: 200px !important;
+  width: 400px !important;
+}
+
+.modal-dialog--sm-responsive {
+  width: 48.6rem;
+}
+
+.modal-dialog--md {
+  width: 60rem;
+  &.empty-state-modal {
+    width: calc(60rem - 2.86rem);
+  }
+}
+
+.modal-dialog--lg {
+  width: 69.1rem;
+}
+
+.modal-dialog--xl {
+  width: 91.4rem;
+}
+
+.modal-content {
+  border: none;
+}
+
+.modal-content .empty-state-modal {
+  height: 31.9rem;
+}
+
+.modal-content .empty-state-modal .scrollable-field {
+  height: 30.3rem;
+}
+
+.modal-container--hide-navigate aw-wizard-navigation-bar {
+  display: none !important;
+}
+
+/*   Body of modal   */
+.modal-body {
+  padding: 0;
+}
+
+.modal-body .nav {
+  justify-content: flex-end;
+  border: none;
+  margin-bottom: 2.4rem;
+  background: transparent;
+}
+
+.modal-body .tabs--simple .nav {
+  transform: translate(0);
+}
+
+.modal-body .tabs--simple .nav-link {
+  width: auto;
+  height: auto;
+}
+
+.modal-body .tabs--simple .tab-content {
+  margin-top: 0;
+}
+
+// button css
+.primary-btn {
+  background-color: $primaryColor;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}

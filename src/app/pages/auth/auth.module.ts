@@ -10,7 +10,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmailVerifyComponent } from './components/email-verify/email-verify.component';
-
+import { KeyFilterModule } from 'primeng/keyfilter';
 
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { EmailVerifyComponent } from './components/email-verify/email-verify.com
     AuthRoutingModule,
     SharedModule,
     ReactiveFormsModule,
+    KeyFilterModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

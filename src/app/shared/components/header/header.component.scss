@@ -90,3 +90,8 @@ a {
 .expandright:focus {
   padding: 0 0 0 16px;
 }
+dl,
+ol,
+ul {
+  margin-bottom: 0rem !important;
+}

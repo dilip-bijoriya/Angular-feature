@@ -28,10 +28,39 @@
           ><i class="icon-shopping-bag-outline-1"></i
         ></a>
       </li>
-      <li>
+      <!-- <li>
         <a href="javascript:void(0)" [routerLink]="['/auth/login']"
           ><i class="icon-account-outline-1"></i
         ></a>
+      </li> -->
+      <li class="nav-item dropdown" dropdown>
+        <div
+          class="top-circle"
+          id="navbarDropdown"
+          dropdownToggle
+          role="button"
+        >
+          <i class="icon-account-outline-1"></i>
+        </div>
+        <div
+          *dropdownMenu
+          class="dropdown-menu dropdown-menu-right"
+          aria-labelledby="navbarDropdown"
+        >
+          <a
+            class="dropdown-item"
+            *ngIf="!cookieValue"
+            [routerLink]="['/auth/login']"
+            >Login</a
+          >
+          <a
+            href="javascript:void(0)"
+            class="dropdown-item cursor-pointer"
+            *ngIf="cookieValue"
+            (click)="logOut()"
+            >Logout</a
+          >
+        </div>
       </li>
     </ul>
   </nav>

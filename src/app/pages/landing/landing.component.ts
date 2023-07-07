@@ -25,27 +25,27 @@ export class LandingComponent implements OnInit {
     const product = [
       {
         id: "1",
-        image: "assets/img/apple1.jpeg",
+        image: "assets/img/product1.webp",
         description: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       },
       {
         id: "2",
-        image: "assets/img/apple2.jpeg",
+        image: "assets/img/product2.jpg",
         description: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       },
       {
         id: "3",
-        image: "assets/img/apple3.jpeg",
+        image: "assets/img/product3.webp",
         description: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       },
       {
         id: "4",
-        image: "assets/img/apple4.jpg",
+        image: "assets/img/product4.webp",
         description: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       },
       {
         id: "5",
-        image: "assets/img/apple5.jpg",
+        image: "assets/img/product5.webp",
         description: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       }
     ]

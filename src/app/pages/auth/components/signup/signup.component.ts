@@ -56,6 +56,10 @@ export class SignupComponent implements OnInit {
     this.showSignUp = true;
   }
 
+  backClick() {
+    this.showSignUp = false;
+  }
+
   secondNextClick() {
     this.submittedTwo = true;
     if (this.stepTwoForm.invalid) {

@@ -17,6 +17,8 @@
             type="search"
             name="q"
             placeholder="Search"
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
           />
           <label class="button searchbutton" for="searchright"
             ><i class="icon-magnifier-outline-1 mglass"></i
@@ -28,11 +30,6 @@
           ><i class="icon-shopping-bag-outline-1"></i
         ></a>
       </li>
-      <!-- <li>
-        <a href="javascript:void(0)" [routerLink]="['/auth/login']"
-          ><i class="icon-account-outline-1"></i
-        ></a>
-      </li> -->
       <li class="nav-item dropdown" dropdown>
         <div
           class="top-circle"

@@ -1,7 +1,15 @@
 <app-header></app-header>
 <div class="box" [ngStyle]="{ 'height.px': innerHeight }">
-  <img src="assets/img/slide.png" alt="" width="100%" />
-
+  <!-- <img src="assets/img/slide.png" alt="" width="100%" /> -->
+  <carousel [isAnimated]="true">
+    <slide *ngFor="let item of slides; let i = index">
+      <img
+        src="{{ item?.image }}"
+        alt="first slide"
+        style="display: block; width: 100%"
+      />
+    </slide>
+  </carousel>
   <div class="m-header">
     <h5>It Is A HeaderBar</h5>
 

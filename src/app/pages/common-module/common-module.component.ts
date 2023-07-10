@@ -10,6 +10,11 @@ export class CommonModuleComponent implements OnInit {
   cookieValue: any;
   public innerHeight: any;
   productList: Array<any> = [];
+  slides = [
+    { image: 'assets/img/slide.png' },
+    { image: 'assets/img/slide.png' },
+    { image: 'assets/img/slide.png' }
+  ];
   constructor(private cookieService: CookieService) {
     const data = this.cookieService.get('web_basket');
     if (data) {

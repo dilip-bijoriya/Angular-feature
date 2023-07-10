@@ -7,6 +7,7 @@ import { filter } from 'rxjs';
 import { ConfirmationModalText } from 'src/app/models/modal-texts';
 import { ConfirmType } from 'src/app/models/modal-confirm';
 import { ModalConfirmComponent } from '../modal-confirm/modal-confirm.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,12 @@ import { ModalConfirmComponent } from '../modal-confirm/modal-confirm.component'
 export class HeaderComponent implements OnInit {
   cookieValue: any;
   bsModalRef: BsModalRef;
-  constructor(private cookieService: CookieService, private CustomModalService: CustomModalService) {
+  searchTerm: string;
+  constructor(
+    private cookieService: CookieService,
+    private CustomModalService: CustomModalService,
+    private router: Router
+  ) {
     const data = this.cookieService.get('web_basket');
     if (data) {
       this.cookieValue = JSON.parse(data);
@@ -60,5 +66,12 @@ export class HeaderComponent implements OnInit {
         error: () => {
         }
       });
+  }
+
+  onSearch() {
+    if (this.searchTerm && this.searchTerm.trim() !== '') {
+      console.log(this.searchTerm);
+      this.router.navigate(['/layout'], { queryParams: { search: this.searchTerm } });
+    }
   }
 }

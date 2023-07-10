@@ -6,7 +6,7 @@ import { CommonModuleComponent } from './common-module.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 @NgModule({
   declarations: [
     CommonModuleComponent
@@ -16,7 +16,8 @@ import { ButtonModule } from 'primeng/button';
     CommonModuleRoutingModule,
     SharedModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    CarouselModule.forRoot()
   ]
 })
 export class CommonModuleModule { }

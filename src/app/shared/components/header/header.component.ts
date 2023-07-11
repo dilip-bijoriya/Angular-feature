@@ -71,7 +71,7 @@ export class HeaderComponent implements OnInit {
   onSearch() {
     if (this.searchTerm && this.searchTerm.trim() !== '') {
       console.log(this.searchTerm);
-      this.router.navigate(['/layout'], { queryParams: { search: this.searchTerm } });
+      this.router.navigate(['/layout/products/product'], { queryParams: { search: this.searchTerm } });
     }
   }
 }

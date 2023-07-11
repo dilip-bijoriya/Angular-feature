@@ -6,6 +6,7 @@ import { LandingComponent } from './landing.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CardModule } from 'primeng/card';
     LandingRoutingModule,
     SharedModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    CarouselModule.forRoot()
   ]
 })
 export class LandingModule { }

@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'layout',
+    redirectTo: 'landing',
     pathMatch: 'full',
   },
 ];

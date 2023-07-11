@@ -1,10 +1,11 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-common-module',
   templateUrl: './common-module.component.html',
-  styleUrls: ['./common-module.component.scss']
+  styleUrls: ['./common-module.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CommonModuleComponent implements OnInit {
   cookieValue: any;
@@ -36,29 +37,36 @@ export class CommonModuleComponent implements OnInit {
     const product = [
       {
         id: "1",
-        image: "assets/img/product1.webp",
-        description: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        image: "assets/img/product1.webp"
       },
       {
         id: "2",
-        image: "assets/img/product2.jpg",
-        description: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        image: "assets/img/product2.jpg"
       },
       {
         id: "3",
-        image: "assets/img/product3.webp",
-        description: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        image: "assets/img/product3.webp"
       },
       {
         id: "4",
-        image: "assets/img/product4.webp",
-        description: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        image: "assets/img/product4.webp"
       },
       {
         id: "5",
-        image: "assets/img/product5.webp",
-        description: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-      }
+        image: "assets/img/product5.webp"
+      },
+      {
+        id: "6",
+        image: "assets/img/product4.webp"
+      },
+      {
+        id: "7",
+        image: "assets/img/product2.jpg"
+      },
+      {
+        id: "1",
+        image: "assets/img/product1.webp"
+      },
     ]
     this.productList = product
   }

@@ -1,19 +1,24 @@
 <app-header></app-header>
 <div class="box" [ngStyle]="{ 'height.px': innerHeight }">
-  <img src="assets/img/slide.png" alt="" width="100%" />
-
+  <!-- <img src="assets/img/slide.png" alt="" width="100%" /> -->
+  <carousel [isAnimated]="true">
+    <slide *ngFor="let item of slides; let i = index">
+      <img
+        src="{{ item?.image }}"
+        alt="first slide"
+        style="display: block; width: 100%"
+      />
+    </slide>
+  </carousel>
   <div class="m-header">
     <h5>It Is A HeaderBar</h5>
 
     <div class="card-section">
       <div class="card" *ngFor="let item of productList; let i = index">
-        <p-card [style]="{ width: '250px' }">
+        <p-card [style]="{ width: '150px' }">
           <ng-template pTemplate="header">
-            <img alt="Card" class="img-fluid" src="{{ item?.image }}" />
+            <img alt="Card" class="img-wrapper" src="{{ item?.image }}" />
           </ng-template>
-          <p>
-            {{ item?.description }}
-          </p>
         </p-card>
       </div>
     </div>

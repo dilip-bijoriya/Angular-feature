@@ -12,6 +12,10 @@ const routes: Routes = [
         redirectTo: '',
         pathMatch: 'full',
       },
+      {
+        path: 'products',
+        loadChildren: () => import('./products/products.module').then(p => p.ProductsModule)
+      }
     ]
   }
 ];

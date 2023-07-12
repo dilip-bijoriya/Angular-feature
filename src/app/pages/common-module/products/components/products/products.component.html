@@ -1,1 +1,16 @@
-<p>products works!</p>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
+    <div class="box p-2" [ngStyle]="{ 'height.px': innerHeight }">
+      <div class="card-section">
+        <div class="card" *ngFor="let item of productList; let i = index">
+          <p-card [style]="{ width: '150px' }">
+            <ng-template pTemplate="header">
+              <img alt="Card" class="img-wrapper" src="{{ item?.image }}" />
+            </ng-template>
+          </p-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

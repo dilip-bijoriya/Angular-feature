@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     this.ApiService.signIn(map).pipe().subscribe({
       next: (res: any) => {
         this.toastr.success(res.message);
-        this.router.navigate(['/layout']);
+        this.router.navigate(['/layout/products/product']);
         this.cookieService.set('web_basket', JSON.stringify(res.response));
         this.loading = false;
       },
